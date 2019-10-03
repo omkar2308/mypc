@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+
+
+<beans>
+
+<bean id="obj" class="com.jbk.A"></bean>  
+<!-- <bean id="obj1" class="com.jbk.B"></bean>   -->
+<!-- <bean id="bbb" class="com.jbk.BeforeAdvisor"></bean>  -->
+<!-- <bean id="bbb1" class="com.jbk.AfterAdvisor"></bean>  -->
+<bean id="ccc" class="AroundAdvisor.java"></bean>
+
+<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="target" ref="obj" ></property>
+<!-- <property name="target" ref="obj1" ></property> -->
+<property name="interceptorNames">
+<list>
+<!-- <value>bbb</value> -->
+<!-- <value>bbb1</value> -->
+<value> ccc </value>
+
+
+
+</list>
+
+
+</property>
+
+</bean>
+
+</beans>

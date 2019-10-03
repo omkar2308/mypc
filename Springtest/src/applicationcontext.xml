@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+<bean id="add" class="com.jbk.Address">
+
+
+<!--  <property name="key" value="1" > </property>
+<property name="value" value="India"></property>       -->
+
+	 <property name="add">
+	<map>
+	<entry key="1" value="india"></entry>
+	<entry key="2" value="Maharashtra"></entry>
+	<entry key="3" value="pune"></entry>
+	
+	</map>  
+	
+	
+	</property>
+	
+</bean>
+
+<bean id="ph" class="com.jbk.Phone">
+	<property name="landline" value="4444"></property>
+	<property name="mobno" >
+	<list>
+	<value>8888888888</value>
+	<value>9999999999</value>
+	
+	</list>
+	
+	</property>
+	
+</bean>
+
+
+<bean id="stu" class="com.jbk.Student" >
+	<property name="age" value="55" ></property>
+	<property name="ph" >
+	<ref local="ph"/>
+	</property>
+	
+	<property name="add">
+	<ref local="add"/>
+	</property>
+
+</bean>
+
+</beans>

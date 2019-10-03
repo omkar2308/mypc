@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+<bean id="StuPointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+<property name="mappedName" value="m1"></property>
+</bean>
+
+ <bean id="StuAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+<property name="pointcut"> 
+<ref local="StuPointcut"/></property>
+
+<property name="advice"> 
+<ref local="ba11" /></property>
+
+</bean>  
+
+
+	<bean id="ba" class="com.jbk.BefAdvice"></bean>
+	<bean id="ba11" class="com.jbk.BefAdvice1"></bean>
+	<bean id="stusimple" class="com.jbk.StuAop"></bean>
+
+	<bean id="stuAspe"
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target">
+			<ref local="stusimple" />
+
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>ba</value>
+				<value>ba11</value>
+				  <value>StuAdvisor</value> 
+
+			</list>
+	    </property>
+	</bean>
+</beans>
