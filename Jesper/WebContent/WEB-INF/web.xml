@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Jesper</display-name>
+  <servlet>
+    <description></description>
+    <servlet-name>jsper</servlet-name>
+    <servlet-class>com.jbk.JsperClass</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>jsper</servlet-name>
+    <url-pattern>/jsper</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JsperClass</display-name>
+    <servlet-name>JsperClass</servlet-name>
+    <servlet-class>com.jbk.JsperClass</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JsperClass</servlet-name>
+    <url-pattern>/JsperClass</url-pattern>
+  </servlet-mapping>
+</web-app>
